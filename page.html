@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthGuide QC - AI-Powered Healthcare Triage Assistant</title>
+    <style>
+        /* Modern Font and Color Scheme */
+        :root {
+            --primary-color: #005A9E; /* A professional, trustworthy blue */
+            --secondary-color: #1BC5B3; /* A vibrant, modern teal for accents */
+            --light-grey: #f8f9fa;
+            --dark-text: #333333;
+            --light-text: #ffffff;
+        }
+
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; 
+            line-height: 1.7; 
+            margin: 0; 
+            padding: 0; 
+            background-color: var(--light-grey); 
+            color: var(--dark-text); 
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Header with Logo */
+        header { 
+            background-color: var(--primary-color); 
+            color: var(--light-text); 
+            padding: 1rem 2rem; 
+            text-align: center; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        header img.logo {
+            height: 50px;
+            filter: brightness(0) invert(1); /* Makes the black logo white */
+        }
+
+        header h1 {
+            color: var(--light-text);
+            font-size: 2.2em;
+            margin: 0;
+        }
+        
+        header p {
+            margin: 5px 0 0 0;
+            font-weight: 300;
+        }
+
+        /* Sticky Navigation */
+        nav { 
+            background: #ffffff; 
+            padding: 0.75rem; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        nav ul { 
+            padding: 0; 
+            margin: 0; 
+            list-style: none; 
+            display: flex; 
+            justify-content: center; 
+        }
+
+        nav ul li { 
+            margin: 0 20px; 
+        }
+
+        nav ul li a { 
+            color: var(--primary-color); 
+            text-decoration: none; 
+            font-weight: bold;
+            padding: 8px 15px;
+            border-radius: 50px; /* Pill shape */
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav ul li a:hover, nav ul li a:focus {
+            background-color: var(--primary-color);
+            color: var(--light-text);
+        }
+
+        /* Hero Section */
+        .hero {
+            background-image: linear-gradient(rgba(0, 90, 158, 0.7), rgba(0, 90, 158, 0.7)), url('healthcare.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 4rem 2rem;
+            text-align: center;
+            color: var(--light-text);
+        }
+
+        .hero h2 {
+            font-size: 2.5em;
+            color: var(--light-text);
+            margin-top: 0;
+            border: none;
+        }
+
+        /* Main Content & Sections */
+        .container { 
+            max-width: 1100px; 
+            margin: auto; 
+            padding: 0 2rem; 
+        }
+
+        .main { 
+            padding: 3rem 0; 
+        }
+
+        .section { 
+            background: #fff; 
+            margin-bottom: 30px; 
+            padding: 40px; 
+            border-radius: 12px; 
+            box-shadow: 0 6px 20px rgba(0,0,0,0.07);
+            overflow: hidden;
+        }
+
+        .section-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .section-content.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .section-content .text-content {
+            flex: 1;
+        }
+        
+        .section-content .image-content {
+            flex: 0 0 300px; /* Don't grow, don't shrink, base width 300px */
+            text-align: center;
+        }
+
+        .section-content img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        h2 { 
+            color: var(--primary-color); 
+            font-size: 2em;
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 10px;
+            margin-top: 0;
+            margin-bottom: 25px;
+        }
+
+        /* Styled Lists */
+        ul.styled-list {
+            padding-left: 0;
+            list-style: none;
+        }
+        
+        ul.styled-list li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 30px;
+            font-size: 1.1em;
+        }
+
+        ul.styled-list li::before {
+            content: '✔'; /* Checkmark icon */
+            color: var(--secondary-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="pngegg.png" alt="HealthGuide QC Logo" class="logo">
+        <div>
+            <h1>HealthGuide QC</h1>
+            <p>Designing a Trustworthy AI-Powered Healthcare Triage Assistant</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#problem">The Problem</a></li>
+            <li><a href="#research">Research & Analysis</a></li>
+            <li><a href="#goals">User Goals</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero">
+        <h2>Building Trust Through Transparent AI</h2>
+        <p>Empowering Quebec's citizens to make informed decisions about their health.</p>
+    </div>
+
+    <div class="container main">
+
+        <section id="problem" class="section">
+            <h2>Understanding the Problem</h2>
+            <p>Accessing timely and appropriate healthcare advice is a significant challenge in Quebec, often leading to overcrowded emergency rooms for non-urgent issues and delayed care for those who hesitate to seek help. The Quebec government is considering "HealthGuide QC," an AI-powered triage assistant, to provide citizens with preliminary guidance. However, the primary obstacle to adoption is public trust.</p>
+            <p>The core design challenge is to create an interface that is not only user-friendly but also fundamentally transparent. It must build trust by making the AI's role, limitations, and reasoning clear and understandable to a diverse user base with varying levels of digital literacy, language fluency, and accessibility needs. Our objective is to bridge the gap between the complex AI system and the everyday citizen, making the interaction safe and empowering.</p>
+        </section>
+
+        <section id="research" class="section">
+            <h2>Research & Analysis</h2>
+            <div class="section-content">
+                <div class="text-content">
+                    <h3>Market Research & Existing Solutions</h3>
+                    <p>Our research into the Quebec healthcare landscape reveals a growing acceptance and implementation of AI. For instance, Montreal's CHUM superhospital has already partnered with the company Dialogue to use an AI-powered chat for patient triage. This demonstrates a local precedent for our concept. We also analyzed existing services like Info-Santé 811 to understand user pain points such as long wait times, which HealthGuide QC could help alleviate.</p>
+                    <h3>How Research Informs Our Design</h3>
+                    <p>This background research directly informs our design strategy. Our design will prioritize:</p>
+                    <ul class="styled-list">
+                        <li><strong>Radical Transparency:</strong> Every AI recommendation will be accompanied by a "confidence score" and cite its sources.</li>
+                        <li><strong>Human-in-the-Loop Integration:</strong> A "Speak to a Nurse" button will be prominently displayed throughout the user journey.</li>
+                        <li><strong>Accessible & Inclusive Design:</strong> To serve all Quebecers, the interface will be designed following WCAG standards and support multiple languages.</li>
+                    </ul>
+                </div>
+                <div class="image-content">
+                    <img src="474-4744269_doctor-icon-clipart-hd-png-download.png" alt="Doctor Icon">
+                </div>
+            </div>
+        </section>
+
+        <section id="goals" class="section">
+            <h2>Define User Goals</h2>
+             <div class="section-content reverse">
+                <div class="text-content">
+                    <p>Based on our problem definition and research, we have defined the primary user goals for HealthGuide QC. The entire user experience will be crafted to meet these fundamental needs:</p>
+                    <ul class="styled-list">
+                        <li><strong>Clarity:</strong> I want to know if I should see a doctor.</li>
+                        <li><strong>Trust:</strong> I need to trust the advice I'm getting.</li>
+                        <li><strong>Understanding:</strong> I want to understand what the AI is and isn't.</li>
+                        <li><strong>Support:</strong> I want an easy way to get human help if I'm scared or confused.</li>
+                        <li><strong>Privacy:</strong> I need to know my personal health information is safe.</li>
+                    </ul>
+                </div>
+                 <div class="image-content">
+                    <img src="stethoscope-icon-2316460-480-doctor-icon-115533927019hztskdd7s.png" alt="Stethoscope Icon">
+                </div>
+            </div>
+        </section>
+
+    </div>
+    
+    <footer>
+        <p>&copy; 2024 HealthGuide QC Project Submission. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
