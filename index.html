@@ -192,6 +192,10 @@
             padding: 2rem 0;
             margin-top: 2rem;
         }
+
+        .bigParagraph {
+            text-align: justify;
+        }
     </style>
 </head>
 <body>
@@ -206,9 +210,9 @@
 
     <nav>
         <ul>
-            <li><a href="#problem">The Problem</a></li>
-            <li><a href="#research">Research & Analysis</a></li>
-            <li><a href="#goals">User Goals</a></li>
+            <li><a href="#problem">Undertstanding The Problem</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#goals">User Requirements</a></li>
         </ul>
     </nav>
 
@@ -221,41 +225,82 @@
 
         <section id="problem" class="section">
             <h2>Understanding the Problem</h2>
-            <p>Accessing timely and appropriate healthcare advice is a significant challenge in Quebec, often leading to overcrowded emergency rooms for non-urgent issues and delayed care for those who hesitate to seek help. The Quebec government is considering "HealthGuide QC," an AI-powered triage assistant, to provide citizens with preliminary guidance. However, the primary obstacle to adoption is public trust.</p>
-            <p>The core design challenge is to create an interface that is not only user-friendly but also fundamentally transparent. It must build trust by making the AI's role, limitations, and reasoning clear and understandable to a diverse user base with varying levels of digital literacy, language fluency, and accessibility needs. Our objective is to bridge the gap between the complex AI system and the everyday citizen, making the interaction safe and empowering.</p>
+            <p class="bigParagraph">There exists a big demand in Quebec for access to quality healthcare services. An important part of successfully helping patients efficiently and effectively are the entrance services offered to them. Elements like preliminary health assessments, early diagnosis, and clear communication of medical information are key when giving a good medical service. However, It has always been difficult and ambiguous to give these initial services to patients because of how each person it’s its own world, as every patient could present different conditions that could be very hard to generalize.
+</p>
+<p class="bigParagraph">In our current times, Artificial Intelligence (AI) seems like a very promising tool to help patients with these entrance services, as, if optimized correctly, they are good at understanding complex health information. Additionally, people seem to be more and more familiar with interacting with AI in chatbots. Yet, even though they could be useful and provide insights, they are still chatbots which lack humanity. An AI chatbot for these services faces unique challenges such as: trust, safety, and transparency. Things that we, humans, value a lot.
+</p>
+<p class="bigParagraph">HealthGuide QC is an AI-powered chatbot implemented by the 
+    
+    <em>Ministère de la Santé et des Services sociaux du Québec</em>
+    which seeks to be a robust entrance service for patients in the province tackling the core challenges mentioned above. It is a service which will build trust through being fine-tuned with verified medical information and clear communication for non-technical people, ensure safety by securely handling personal health data and providing reliable guidance, and promote transparency by clearly explaining how recommendations are generated and when human professionals should be consulted.
+</p>
         </section>
 
         <section id="research" class="section">
-            <h2>Research & Analysis</h2>
-            <div class="section-content">
-                <div class="text-content">
-                    <h3>Market Research & Existing Solutions</h3>
-                    <p>Our research into the Quebec healthcare landscape reveals a growing acceptance and implementation of AI. For instance, Montreal's CHUM superhospital has already partnered with the company Dialogue to use an AI-powered chat for patient triage. This demonstrates a local precedent for our concept. We also analyzed existing services like Info-Santé 811 to understand user pain points such as long wait times, which HealthGuide QC could help alleviate.</p>
-                    <h3>How Research Informs Our Design</h3>
-                    <p>This background research directly informs our design strategy. Our design will prioritize:</p>
-                    <ul class="styled-list">
-                        <li><strong>Radical Transparency:</strong> Every AI recommendation will be accompanied by a "confidence score" and cite its sources.</li>
-                        <li><strong>Human-in-the-Loop Integration:</strong> A "Speak to a Nurse" button will be prominently displayed throughout the user journey.</li>
-                        <li><strong>Accessible & Inclusive Design:</strong> To serve all Quebecers, the interface will be designed following WCAG standards and support multiple languages.</li>
-                    </ul>
-                </div>
-                <div class="image-content">
-                    <img src="474-4744269_doctor-icon-clipart-hd-png-download.png" alt="Doctor Icon">
-                </div>
-            </div>
+            <h2>Research</h2>
+            <p class="bigParagraph">
+                In order to produce a valuable solution, it was fundamental to understand Quebec’s healthcare challenges, as well as the market and existing technologies for healthcare entrance assistance. 
+            </p>
+            <p class="bigParagraph">
+                Quebec’s healthcare system faces critical challenges such as long waiting lists, high job vacancy rates, and a growing patient demand due to an aging population. These challenges highlight a need for more efficient services and solutions that could amend the current gap in supply and demand. Therefore, we believe that implementing AI technologies to support healthcare services in the province is well justified.
+            </p>
+            <p class="bigParagraph">
+                Our research in AI chatbots in healthcare showed that these tools improve: accessibility, efficiency and patient satisfaction, while reducing administrative workloads. However, there are serious challenges such as privacy, safety and lack of empathy in AI-human interactions. These insights should directly influence the system’s design, prioritizing trust, safety, and transparency as core principles. 
+            </p>
+            <p class="bigParagraph">In terms of competitors or similar applications in Canada, <strong>TELUS Health MyCare </strong>(formerly Babylon by TELUS Health) highlights. It offers AI-powered symptom checking and virtual consultations for TELUS clients, with a focus on secure data handling. Key insights from this application for our construction of HealthGuide QC include:
+</p>
+<ul>
+    <li>Offer bilingual (English & French) support for Quebec users.
+</li>
+<li>Provide AI tools while maintaining clear pathways to human doctors.
+</li>
+<li>Embed robust privacy measures aligned with Canadian data protection laws.
+</li>
+<li>Maintain a professional, empathetic interface for creating trust.
+</li>
+</ul>
+
+<p>Furthermore, there are other healthcare chatbots which functionalities provide good guidance to HealthGuide QC:
+</p>
+<ul>
+<li><strong>Ada Health</strong>: Broad medical advice and symptom analysis powered by AI in 6+ health categories and 7+ languages. Includes recurrent health articles as additional content. 
+</li>
+<li><strong>Buoy Health</strong>: Broad medical advice and symptom analysis, it includes expert guided plans for 16+ symptoms.
+</li>
+<li><strong>Keenethics’ OneRemission</strong>: Chatbot with health tracking for cancer patients with connection to 24/7 human oncologists.
+</li>
+<li><strong>Sensely’s Molly</strong>: AI-powered nurse that gives medical advice and symptom analysis. Uses triage system to detect emergencies.
+</li>
+</ul>
+<p>References:</p>
+<ul>
+    <li>Laymouna, M., et al. (2024). Roles, Users, Benefits, and Limitations of Chatbots in Health Care: Rapid Review. PMC, https://pmc.ncbi.nlm.nih.gov/articles/PMC11303905/
+    </li>
+    <li>Statistique Québec.(2023). A portrait of job vacancy rates in the Québec health care and social assistance
+industry.
+</li>
+<li>TELUS Health. (2019). New app from TELUS Health and Babylon enables Canadians to visit a doctor through their
+smartphone. https://www.telus.com/en/health/press-releases/new-app-telus-health-
+babylon-enables-canadians-visit-doctor-smartphone
+</li>
+<li>Dilmegani, C. (2025). Top 10 chatbots in healthcare: Insights & use cases. AIMultiple. https://research.aimultiple.com/chatbot-healthcare/
+</li>
+</ul>
         </section>
 
         <section id="goals" class="section">
-            <h2>Define User Goals</h2>
+            <h2>User Requirements</h2>
              <div class="section-content reverse">
                 <div class="text-content">
-                    <p>Based on our problem definition and research, we have defined the primary user goals for HealthGuide QC. The entire user experience will be crafted to meet these fundamental needs:</p>
                     <ul class="styled-list">
-                        <li><strong>Clarity:</strong> I want to know if I should see a doctor.</li>
-                        <li><strong>Trust:</strong> I need to trust the advice I'm getting.</li>
-                        <li><strong>Understanding:</strong> I want to understand what the AI is and isn't.</li>
-                        <li><strong>Support:</strong> I want an easy way to get human help if I'm scared or confused.</li>
-                        <li><strong>Privacy:</strong> I need to know my personal health information is safe.</li>
+                        <li><strong>Multilingual:</strong> Supports conversations in multiple languages.</li>
+                        <li><strong>Clarity:</strong> Delivers medical information non-technical patients.</li>
+                        <li><strong>Availability:</strong> 24/7 doubt solving. </li>
+                        <li><strong>Assessment:</strong> Guides users through symptom checks and early diagnosis insights.</li>
+                        <li><strong>Security:</strong> Strong privacy measures according to Canadian regulations.</li>
+                        <li><strong>Usability:</strong> Features an intuitive chatbot design.</li>
+                        <li><strong>Trust:</strong> Provides reliable medical guidance with evidence to build confidence.</li>
+                        <li><strong>Next Steps:</strong> Direct users to the appropiate health service.</li>
                     </ul>
                 </div>
                  <div class="image-content">
