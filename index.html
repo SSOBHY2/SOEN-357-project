@@ -39,9 +39,19 @@
         nav ul li { margin: 5px 15px; }
         nav ul li a { color: var(--primary-color); font-weight: 600; padding: 8px 15px; border-radius: 50px; transition: background-color 0.3s, color 0.3s; }
         nav ul li a:hover, nav ul li a:focus { background-color: var(--primary-color); color: var(--background-white); }
-        .hero { padding: 5rem 2rem; text-align: center; background-color: var(--primary-color); color: var(--background-white); }
+        
+        /* FIXED: Hero section with background image */
+        .hero { 
+            padding: 6rem 2rem; 
+            text-align: center; 
+            color: var(--background-white);
+            background-image: linear-gradient(rgba(0, 58, 110, 0.85), rgba(0, 58, 110, 0.85)), url('healthcare.jpg');
+            background-size: cover;
+            background-position: center;
+        }
         .hero h1 { color: var(--background-white); border: none; }
-        .hero p { font-size: 1.2em; max-width: 700px; margin: 1rem auto 0 auto; color: rgba(255, 255, 255, 0.85); }
+        .hero p { font-size: 1.2em; max-width: 700px; margin: 1rem auto 0 auto; color: rgba(255, 255, 255, 0.9); }
+        
         .main { padding: 4rem 0; }
         .section { background: var(--background-white); margin-bottom: 40px; padding: 50px; border-radius: 16px; box-shadow: var(--shadow); overflow: hidden; }
 
@@ -67,6 +77,9 @@
         .mockup-item img { width: 100%; max-width: 350px; height: auto; box-shadow: 0 10px 30px rgba(0,0,0,0.1), 0 0 0 10px #111; border-radius: 40px; transition: transform 0.3s; }
         .mockup-item img:hover { transform: translateY(-5px); }
         .mockup-item figcaption { margin-top: 1.5rem; font-weight: 600; color: var(--text-dark); }
+        .requirements-list { list-style: none; padding-left: 0; }
+        .requirements-list li { margin-bottom: 15px; position: relative; padding-left: 30px; font-size: 1.05em; }
+        .requirements-list li::before { content: '✔'; color: var(--secondary-color); font-weight: bold; position: absolute; left: 0; top: 2px; }
         .research-artifact { border: 1px solid var(--border-color); border-radius: 8px; padding: 2rem; margin-top: 2rem; background: var(--background-light); }
         .research-artifact h4 { border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem; }
         blockquote { margin: 2rem 0; border-left: 5px solid var(--secondary-color); padding-left: 1.5rem; font-style: italic; font-size: 1.1em; color: var(--text-dark); }
@@ -91,6 +104,7 @@
             <li><a href="#experience">The Experience</a></li>
             <li><a href="#design">The Process</a></li>
             <li><a href="#mockups">The Solution</a></li>
+            <li><a href="#requirements">Requirements</a></li>
             <li><a href="#evidence">Evidence</a></li>
         </ul>
     </nav>
@@ -143,12 +157,12 @@
             <h3>Storyboard: A Visual Narrative</h3>
             <p><strong>This storyboard follows our persona, Mohammed, demonstrating his journey from initial anxiety to final empowerment.</strong></p>
             <div class="storyboard-grid">
-                <div class="storyboard-panel"><div class="image-placeholder">1. The Problem</div><div class="caption">Mohammed feels chest tightness but hesitates to call for help due to the language barrier.</div></div>
-                <div class="storyboard-panel"><div class="image-placeholder">2. The Solution</div><div class="caption">He opens HealthGuide QC and is relieved to find an Arabic language option.</div></div>
-                <div class="storyboard-panel"><div class="image-placeholder">3. The Interaction</div><div class="caption">He nervously types his symptoms into the clean, simple interface.</div></div>
-                <div class="storyboard-panel"><div class="image-placeholder">4. The Result</div><div class="caption">The AI provides a clear recommendation and a confidence score, building his trust.</div></div>
-                <div class="storyboard-panel"><div class="image-placeholder">5. The Action</div><div class="caption">He follows the advice and uses the app to locate a recommended walk-in clinic nearby.</div></div>
-                <div class="storyboard-panel"><div class="image-placeholder">6. The Outcome</div><div class="caption">With a clear plan, Mohammed feels confident and in control of his health situation.</div></div>
+                <div class="storyboard-panel"><div class="image-placeholder">1. Symptom Onset</div><div class="caption">Mohammed feels chest tightness but hesitates to call for help due to the language barrier.</div></div>
+                <div class="storyboard-panel"><div class="image-placeholder">2. Seeking Help</div><div class="caption">He opens HealthGuide QC and is relieved to find an Arabic language option.</div></div>
+                <div class="storyboard-panel"><div class="image-placeholder">3. AI Interaction</div><div class="caption">He nervously types his symptoms into the clean, simple interface.</div></div>
+                <div class="storyboard-panel"><div class="image-placeholder">4. Receiving Advice</div><div class="caption">The AI provides a clear recommendation and a confidence score, building his trust.</div></div>
+                <div class="storyboard-panel"><div class="image-placeholder">5. Taking Action</div><div class="caption">He follows the advice and uses the app to locate a recommended walk-in clinic nearby.</div></div>
+                <div class="storyboard-panel"><div class="image-placeholder">6. Outcome</div><div class="caption">With a clear plan, Mohammed feels confident and in control of his health situation.</div></div>
             </div>
 
             <h3>User Journey & Flow Maps</h3>
@@ -201,6 +215,18 @@
                     <figcaption>5. Find Clinics</figcaption>
                 </figure>
             </div>
+        </section>
+
+        <section id="requirements" class="section">
+            <h2>Final User Requirements</h2>
+            <p><strong>Our design principles and user research were synthesized into a final set of functional requirements.</strong> This list serves as a summary of the core features the HealthGuide QC application must provide to be successful.</p>
+            <ul class="requirements-list">
+                <li><strong>Multilingual Support:</strong> The user must be able to interact with the application in English, French, and Arabic.</li>
+                <li><strong>Transparent AI:</strong> Every recommendation must be accompanied by a confidence score and links to medical sources.</li>
+                <li><strong>Human-in-the-Loop:</strong> The user must always have a clear, accessible option to connect with a human nurse (e.g., 811).</li>
+                <li><strong>Actionable Next Steps:</strong> The application must provide clear, location-aware directions to appropriate healthcare facilities.</li>
+                <li><strong>Data Privacy:</strong> User data must be handled securely and transparently, in accordance with Canadian privacy laws.</li>
+            </ul>
         </section>
         
         <section id="evidence" class="section">
