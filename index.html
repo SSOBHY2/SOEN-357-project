@@ -61,9 +61,20 @@
         .persona-item figcaption { margin-top: 1rem; font-weight: 600; color: var(--text-dark); font-size: 1.1em; }
         .visual-artifact { width: 100%; border-radius: 12px; box-shadow: var(--shadow); margin-top: 1rem; border: 1px solid var(--border-color); }
         .storyboard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-        .storyboard-panel { border: 1px solid var(--border-color); border-radius: 8px; }
-        .storyboard-panel .image-placeholder { background-color: #e9ecef; display: flex; align-items: center; justify-content: center; height: 160px; font-size: 1.2em; color: var(--text-muted); font-weight: bold; border-top-left-radius: 8px; border-top-right-radius: 8px; }
-        .storyboard-panel .caption { padding: 1rem; font-size: 0.95em; }
+        .storyboard-panel { border: 1px solid var(--border-color); border-radius: 8px; display: flex; flex-direction: column; }
+        .storyboard-panel .caption { padding: 1rem; font-size: 0.95em; flex-grow: 1; }
+        .storyboard-panel .caption strong { color: var(--text-dark); }
+        
+        /* FIXED: Storyboard Image Styling */
+        .storyboard-panel img.storyboard-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
         .wireframe-container { position: relative; max-width: 400px; margin: 2rem auto; }
         .wireframe { border: 2px solid #333; padding: 15px; background-color: var(--background-white); background-image: linear-gradient(var(--border-color) 1px, transparent 1px), linear-gradient(to right, var(--border-color) 1px, var(--background-white) 1px); background-size: 20px 20px; }
         .wireframe .box { background: #e9ecef; border: 1px solid var(--text-muted); padding: 10px; text-align: center; margin-bottom: 10px; font-size: 0.9em; }
@@ -168,14 +179,32 @@
             <p><strong>To truly step into our users' shoes, we visualized their interactions from start to finish.</strong> This process allowed us to map their emotional state and ensure the application flow is intuitive, reassuring, and effective.</p>
             
             <h3>Storyboard: A Visual Narrative</h3>
-            <p><strong>This storyboard follows our persona, Mohammed, demonstrating his journey from initial anxiety to final empowerment.</strong></p>
+            <p><strong>This storyboard follows our persona, Mohammed, demonstrating his journey from initial anxiety to final empowerment.</strong> It was generated using AI to create a clean, 2D illustrative style that matches our professional aesthetic.</p>
             <div class="storyboard-grid">
-                <div class="storyboard-panel"><div class="image-placeholder">1. Symptom Onset</div><div class="caption">Mohammed feels chest tightness but hesitates to call for help due to the language barrier.</div></div>
-                <div class="storyboard-panel"><div class="image-placeholder">2. Seeking Help</div><div class="caption">He opens HealthGuide QC and is relieved to find an Arabic language option.</div></div>
-                <div class="storyboard-panel"><div class="image-placeholder">3. AI Interaction</div><div class="caption">He nervously types his symptoms into the clean, simple interface.</div></div>
-                <div class="storyboard-panel"><div class="image-placeholder">4. Receiving Advice</div><div class="caption">The AI provides a clear recommendation and a confidence score, building his trust.</div></div>
-                <div class="storyboard-panel"><div class="image-placeholder">5. Taking Action</div><div class="caption">He follows the advice and uses the app to locate a recommended walk-in clinic nearby.</div></div>
-                <div class="storyboard-panel"><div class="image-placeholder">6. Outcome</div><div class="caption">With a clear plan, Mohammed feels confident and in control of his health situation.</div></div>
+                <figure class="storyboard-panel">
+                    <img src="storyboard-1.png" alt="An elderly man at home looking worried, with a hand on his chest." class="storyboard-image">
+                    <figcaption class="caption"><strong>1. Symptom Onset:</strong> Mohammed feels chest tightness but hesitates to call for help due to the language barrier.</figcaption>
+                </figure>
+                <figure class="storyboard-panel">
+                    <img src="storyboard-2.png" alt="A smartphone screen showing language selection options including Arabic." class="storyboard-image">
+                    <figcaption class="caption"><strong>2. Seeking Help:</strong> He opens HealthGuide QC and is relieved to find an Arabic language option.</figcaption>
+                </figure>
+                <figure class="storyboard-panel">
+                    <img src="storyboard-3.png" alt="A chatbot interface on a phone where the user has typed their symptom." class="storyboard-image">
+                    <figcaption class="caption"><strong>3. AI Interaction:</strong> He nervously types his symptoms into the clean, simple interface.</figcaption>
+                </figure>
+                <figure class="storyboard-panel">
+                    <img src="storyboard-4.png" alt="The app's results screen recommending a clinic visit with an 85% confidence score." class="storyboard-image">
+                    <figcaption class="caption"><strong>4. Receiving Advice:</strong> The AI provides a clear recommendation and a confidence score, building his trust.</figcaption>
+                </figure>
+                <figure class="storyboard-panel">
+                    <img src="storyboard-5.png" alt="A map on the phone showing nearby clinic locations." class="storyboard-image">
+                    <figcaption class="caption"><strong>5. Taking Action:</strong> He follows the advice and uses the app to locate a recommended walk-in clinic nearby.</figcaption>
+                </figure>
+                <figure class="storyboard-panel">
+                    <img src="storyboard-6.png" alt="The elderly man looking confident and leaving his house." class="storyboard-image">
+                    <figcaption class="caption"><strong>6. Outcome:</strong> With a clear plan, Mohammed feels confident and in control of his health situation.</figcaption>
+                </figure>
             </div>
 
             <h3>User Journey & Flow Maps</h3>
