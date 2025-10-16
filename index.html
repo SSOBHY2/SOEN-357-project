@@ -46,16 +46,35 @@
 
         /* --- 3. REFINED & FIXED COMPONENTS --- */
 
-        /* Professional Persona Gallery (USING RAW PNGS) */
-        .persona-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem; text-align: center; }
-        .persona-item img { width: 100%; border-radius: 12px; border: 1px solid var(--border-color); box-shadow: var(--shadow); transition: transform 0.3s; }
-        .persona-item img:hover { transform: translateY(-5px); }
-        .persona-item figcaption { margin-top: 1rem; font-weight: 600; color: var(--text-dark); }
+        /* FIXED: Professional Persona Gallery (Large, Readable Layout) */
+        .persona-gallery { 
+            display: grid; 
+            grid-template-columns: 1fr; /* Single column for maximum size */
+            gap: 3rem; /* Increased gap for better separation */
+            margin-top: 2rem; 
+        }
+        .persona-item {
+            max-width: 800px; /* Constrains width on very large screens */
+            margin: 0 auto; /* Centers the item in the grid column */
+            text-align: center;
+        }
+        .persona-item img { 
+            width: 100%; 
+            border-radius: 12px; 
+            border: 1px solid var(--border-color); 
+            box-shadow: var(--shadow);
+        }
+        .persona-item figcaption { 
+            margin-top: 1rem; 
+            font-weight: 600; 
+            color: var(--text-dark); 
+            font-size: 1.1em;
+        }
 
         /* Journey and Flow Image Styling */
         .visual-artifact { width: 100%; border-radius: 12px; box-shadow: var(--shadow); margin-top: 1rem; border: 1px solid var(--border-color); }
         
-        /* Storyboard Panels (NEW ARTIFACT) */
+        /* Storyboard Panels */
         .storyboard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
         .storyboard-panel { border: 1px solid var(--border-color); border-radius: 8px; }
         .storyboard-panel .image-placeholder { background-color: #e9ecef; display: flex; align-items: center; justify-content: center; height: 160px; font-size: 1.2em; color: var(--text-muted); font-weight: bold; border-top-left-radius: 8px; border-top-right-radius: 8px; }
