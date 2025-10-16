@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale-1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HealthGuide QC - A UX Case Study</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,9 +39,19 @@
         nav ul li { margin: 5px 15px; }
         nav ul li a { color: var(--primary-color); font-weight: 600; padding: 8px 15px; border-radius: 50px; transition: background-color 0.3s, color 0.3s; }
         nav ul li a:hover, nav ul li a:focus { background-color: var(--primary-color); color: var(--background-white); }
-        .hero { padding: 5rem 2rem; text-align: center; background-color: var(--primary-color); color: var(--background-white); }
+        
+        /* FIXED: Hero section with background image */
+        .hero { 
+            padding: 6rem 2rem; 
+            text-align: center; 
+            color: var(--background-white);
+            background-image: linear-gradient(rgba(0, 58, 110, 0.85), rgba(0, 58, 110, 0.85)), url('healthcare.jpg');
+            background-size: cover;
+            background-position: center;
+        }
         .hero h1 { color: var(--background-white); border: none; }
-        .hero p { font-size: 1.2em; max-width: 700px; margin: 1rem auto 0 auto; color: rgba(255, 255, 255, 0.85); }
+        .hero p { font-size: 1.2em; max-width: 700px; margin: 1rem auto 0 auto; color: rgba(255, 255, 255, 0.9); }
+        
         .main { padding: 4rem 0; }
         .section { background: var(--background-white); margin-bottom: 40px; padding: 50px; border-radius: 16px; box-shadow: var(--shadow); overflow: hidden; }
 
@@ -62,27 +72,11 @@
         .anno-1 { top: 20px; right: -120px; width: 110px; }
         .anno-2 { top: 120px; left: -140px; width: 130px; }
         .anno-3 { bottom: 20px; right: -150px; width: 140px; }
-        
-        /* FIXED: Mockup Grid Layout */
-        .mockup-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Responsive grid, ensures large items */
-            gap: 3.5rem; /* Increased gap */
-            margin-top: 2rem;
-            justify-items: center; /* Center items in their grid cells */
-        }
+        .mockup-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 3.5rem; margin-top: 2rem; justify-items: center; }
         .mockup-item { text-align: center; }
-        .mockup-item img {
-            width: 100%;
-            max-width: 350px; /* Controls max size */
-            height: auto;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1), 0 0 0 10px #111;
-            border-radius: 40px;
-            transition: transform 0.3s;
-        }
+        .mockup-item img { width: 100%; max-width: 350px; height: auto; box-shadow: 0 10px 30px rgba(0,0,0,0.1), 0 0 0 10px #111; border-radius: 40px; transition: transform 0.3s; }
         .mockup-item img:hover { transform: translateY(-5px); }
         .mockup-item figcaption { margin-top: 1.5rem; font-weight: 600; color: var(--text-dark); }
-        
         .research-artifact { border: 1px solid var(--border-color); border-radius: 8px; padding: 2rem; margin-top: 2rem; background: var(--background-light); }
         .research-artifact h4 { border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem; }
         blockquote { margin: 2rem 0; border-left: 5px solid var(--secondary-color); padding-left: 1.5rem; font-style: italic; font-size: 1.1em; color: var(--text-dark); }
