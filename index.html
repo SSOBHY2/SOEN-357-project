@@ -62,26 +62,6 @@
         .anno-1 { top: 20px; right: -120px; width: 110px; }
         .anno-2 { top: 120px; left: -140px; width: 130px; }
         .anno-3 { bottom: 20px; right: -150px; width: 140px; }
-        
-        /* FIXED: Mockup Grid Layout */
-        .mockup-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
-            margin-top: 2rem;
-        }
-        .mockup-item { text-align: center; }
-        .mockup-item img {
-            width: 100%;
-            max-width: 350px; /* Prevents images from becoming too large on wide screens */
-            height: auto;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2), 0 0 0 8px #111, 0 0 0 10px #333;
-            border-radius: 40px;
-            transition: transform 0.3s;
-        }
-        .mockup-item img:hover { transform: translateY(-5px); }
-        .mockup-item figcaption { margin-top: 1.5rem; font-weight: 600; color: var(--text-dark); }
-        
         .research-artifact { border: 1px solid var(--border-color); border-radius: 8px; padding: 2rem; margin-top: 2rem; background: var(--background-light); }
         .research-artifact h4 { border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem; }
         blockquote { margin: 2rem 0; border-left: 5px solid var(--secondary-color); padding-left: 1.5rem; font-style: italic; font-size: 1.1em; color: var(--text-dark); }
@@ -193,29 +173,12 @@
 
         <section id="mockups" class="section">
             <h2>The Solution: High-Fidelity Mockups</h2>
-            <p><strong>The culmination of our research and design process is the final high-fidelity mockup.</strong> These screens represent the key moments in the user flow, demonstrating a clean, trustworthy, and accessible interface that directly addresses the needs of our personas.</p>
-            <div class="mockup-grid">
-                <figure class="mockup-item">
-                    <img src="1.png" alt="Welcome Screen Mockup">
-                    <figcaption>1. Welcome & Language Selection</figcaption>
-                </figure>
-                <figure class="mockup-item">
-                    <img src="2.png" alt="Symptom Input Mockup">
-                    <figcaption>2. Symptom Input</figcaption>
-                </figure>
-                <figure class="mockup-item">
-                    <img src="3.png" alt="AI Processing Mockup">
-                    <figcaption>3. AI Processing</figcaption>
-                </figure>
-                <figure class="mockup-item">
-                    <img src="4.png" alt="Triage Results Mockup">
-                    <figcaption>4. Triage Results & Next Steps</figcaption>
-                </figure>
-                <figure class="mockup-item">
-                    <img src="5.png" alt="Find Clinics Mockup">
-                    <figcaption>5. Find Clinics</figcaption>
-                </figure>
-            </div>
+            <p><strong>The culmination of our research and design process is the final high-fidelity mockup.</strong> This complete user flow demonstrates a clean, trustworthy, and accessible interface that directly addresses the needs of our personas.</p>
+            <figure style="text-align: center; margin-top: 2rem;">
+                <!-- IMPORTANT: Replace 'FinalMockups.png' with the actual filename of your composite image -->
+                <img src="FinalMockups.png" alt="A composite image showing the 5 key screens of the HealthGuide QC app flow." class="visual-artifact">
+                <figcaption style="margin-top: 1rem; font-weight: 600; color: var(--text-dark);">The Complete High-Fidelity User Flow</figcaption>
+            </figure>
         </section>
         
         <section id="evidence" class="section">
