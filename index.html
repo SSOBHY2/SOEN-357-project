@@ -72,10 +72,11 @@
             list-style: none; 
             display: flex; 
             justify-content: center; 
+            flex-wrap: wrap;
         }
 
         nav ul li { 
-            margin: 0 20px; 
+            margin: 5px 15px; 
         }
 
         nav ul li a { 
@@ -196,6 +197,194 @@
         .bigParagraph {
             text-align: justify;
         }
+        
+        /* === NEW CSS FOR ADDED SECTIONS === */
+
+        /* Empathy Maps CSS */
+        .empathy-map-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .empathy-map {
+            flex: 1;
+            min-width: 300px;
+            max-width: 350px;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            background: #fff;
+            overflow: hidden;
+        }
+        .empathy-map-header {
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            padding: 15px;
+            text-align: center;
+        }
+        .empathy-map-header h3 {
+            margin: 0;
+            font-size: 1.5em;
+            color: var(--light-text);
+        }
+        .empathy-map-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1px;
+            background-color: #e0e0e0;
+        }
+        .empathy-quadrant {
+            background-color: #fff;
+            padding: 15px;
+        }
+        .empathy-quadrant h4 {
+            margin: 0 0 10px 0;
+            color: var(--primary-color);
+            font-size: 1.1em;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 5px;
+        }
+        .empathy-quadrant ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+            font-size: 0.95em;
+        }
+        .empathy-quadrant ul li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+        }
+        .empathy-quadrant ul li::before {
+            content: '»';
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
+        /* Storyboard CSS */
+        .storyboard-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .storyboard-panel {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background: #fff;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+        }
+        .storyboard-image {
+            background-color: #e9ecef;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 180px;
+            font-size: 1.5em;
+            color: #6c757d;
+            font-weight: bold;
+            padding: 10px; text-align: center;
+        }
+        .storyboard-caption {
+            padding: 15px;
+            font-size: 0.9em;
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+        .storyboard-caption strong {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+
+        /* Sketches & Wireframes CSS */
+        .design-process-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        .design-stage {
+            flex: 1;
+            min-width: 300px;
+        }
+        .design-stage h3 {
+            text-align: center;
+            color: var(--dark-text);
+        }
+        .sketch {
+            border: 2px solid #555;
+            padding: 15px;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #fafafa;
+            margin-bottom: 20px;
+        }
+        .sketch p { margin: 10px 0; }
+        .sketch .box { border: 2px solid #555; padding: 10px; text-align: center; margin-bottom: 10px; }
+        .sketch .button-row { display: flex; justify-content: space-around; }
+
+        .wireframe {
+            border: 1px solid #b0b0b0;
+            padding: 15px;
+            background-color: #f0f0f0;
+        }
+        .wireframe .wf-box { background-color: #d0d0d0; border: 1px solid #b0b0b0; text-align: center; padding: 20px 10px; margin-bottom: 15px; color: #555; }
+        .wireframe .wf-text { background-color: #e0e0e0; height: 12px; margin-bottom: 8px; border-radius: 4px; }
+        .wireframe .wf-text.short { width: 60%; }
+        .wireframe .wf-actions { display: flex; gap: 10px; }
+        .wireframe .wf-button { flex: 1; background-color: #c0c0c0; padding: 12px; text-align: center; color: #555; }
+
+        /* User Research Quotes CSS */
+        .quote-container {
+            margin-top: 30px;
+            border-left: 5px solid var(--secondary-color);
+            padding-left: 20px;
+            font-style: italic;
+            font-size: 1.1em;
+        }
+        .quote-container p {
+            margin: 0;
+        }
+        .quote-container footer {
+            background: none;
+            color: var(--dark-text);
+            text-align: right;
+            padding: 10px 0 0 0;
+            margin-top: 0;
+            font-style: normal;
+            font-weight: bold;
+        }
+        
+        /* Task Analysis Table CSS */
+        .task-analysis-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 25px;
+            font-size: 0.95em;
+        }
+        .task-analysis-table th, .task-analysis-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        .task-analysis-table th {
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            font-weight: bold;
+        }
+        .task-analysis-table tr:nth-child(even) {
+            background-color: var(--light-grey);
+        }
+
     </style>
 </head>
 <body>
@@ -210,9 +399,12 @@
 
     <nav>
         <ul>
-            <li><a href="#problem">Undertstanding The Problem</a></li>
+            <li><a href="#problem">The Problem</a></li>
             <li><a href="#research">Research</a></li>
-            <li><a href="#goals">User Requirements</a></li>
+            <li><a href="#user-personas">User Personas</a></li>
+            <li><a href="#user-journeys">User Journeys</a></li>
+            <li><a href="#design-process">Design Process</a></li>
+            <li><a href="#user-requirements">Requirements</a></li>
         </ul>
     </nav>
 
@@ -225,82 +417,167 @@
 
         <section id="problem" class="section">
             <h2>Understanding the Problem</h2>
-            <p class="bigParagraph">There exists a big demand in Quebec for access to quality healthcare services. An important part of successfully helping patients efficiently and effectively are the entrance services offered to them. Elements like preliminary health assessments, early diagnosis, and clear communication of medical information are key when giving a good medical service. However, It has always been difficult and ambiguous to give these initial services to patients because of how each person it’s its own world, as every patient could present different conditions that could be very hard to generalize.
-</p>
-<p class="bigParagraph">In our current times, Artificial Intelligence (AI) seems like a very promising tool to help patients with these entrance services, as, if optimized correctly, they are good at understanding complex health information. Additionally, people seem to be more and more familiar with interacting with AI in chatbots. Yet, even though they could be useful and provide insights, they are still chatbots which lack humanity. An AI chatbot for these services faces unique challenges such as: trust, safety, and transparency. Things that we, humans, value a lot.
-</p>
-<p class="bigParagraph">HealthGuide QC is an AI-powered chatbot implemented by the 
-    
-    <em>Ministère de la Santé et des Services sociaux du Québec</em>
-    which seeks to be a robust entrance service for patients in the province tackling the core challenges mentioned above. It is a service which will build trust through being fine-tuned with verified medical information and clear communication for non-technical people, ensure safety by securely handling personal health data and providing reliable guidance, and promote transparency by clearly explaining how recommendations are generated and when human professionals should be consulted.
-</p>
+            <p class="bigParagraph">There exists a big demand in Quebec for access to quality healthcare services. An important part of successfully helping patients efficiently and effectively are the entrance services offered to them. Elements like preliminary health assessments, early diagnosis, and clear communication of medical information are key when giving a good medical service. However, It has always been difficult and ambiguous to give these initial services to patients because of how each person it’s its own world, as every patient could present different conditions that could be very hard to generalize.</p>
+            <p class="bigParagraph">In our current times, Artificial Intelligence (AI) seems like a very promising tool to help patients with these entrance services, as, if optimized correctly, they are good at understanding complex health information. Additionally, people seem to be more and more familiar with interacting with AI in chatbots. Yet, even though they could be useful and provide insights, they are still chatbots which lack humanity. An AI chatbot for these services faces unique challenges such as: trust, safety, and transparency. Things that we, humans, value a lot.</p>
+            <p class="bigParagraph">HealthGuide QC is an AI-powered chatbot implemented by the <em>Ministère de la Santé et des Services sociaux du Québec</em> which seeks to be a robust entrance service for patients in the province tackling the core challenges mentioned above. It is a service which will build trust through being fine-tuned with verified medical information and clear communication for non-technical people, ensure safety by securely handling personal health data and providing reliable guidance, and promote transparency by clearly explaining how recommendations are generated and when human professionals should be consulted.</p>
         </section>
 
         <section id="research" class="section">
             <h2>Research</h2>
-            <p class="bigParagraph">
-                In order to produce a valuable solution, it was fundamental to understand Quebec’s healthcare challenges, as well as the market and existing technologies for healthcare entrance assistance. 
-            </p>
-            <p class="bigParagraph">
-                Quebec’s healthcare system faces critical challenges such as long waiting lists, high job vacancy rates, and a growing patient demand due to an aging population. These challenges highlight a need for more efficient services and solutions that could amend the current gap in supply and demand. Therefore, we believe that implementing AI technologies to support healthcare services in the province is well justified.
-            </p>
-            <p class="bigParagraph">
-                Our research in AI chatbots in healthcare showed that these tools improve: accessibility, efficiency and patient satisfaction, while reducing administrative workloads. However, there are serious challenges such as privacy, safety and lack of empathy in AI-human interactions. These insights should directly influence the system’s design, prioritizing trust, safety, and transparency as core principles. 
-            </p>
-            <p class="bigParagraph">In terms of competitors or similar applications in Canada, <strong>TELUS Health MyCare </strong>(formerly Babylon by TELUS Health) highlights. It offers AI-powered symptom checking and virtual consultations for TELUS clients, with a focus on secure data handling. Key insights from this application for our construction of HealthGuide QC include:
-</p>
-<ul>
-    <li>Offer bilingual (English & French) support for Quebec users.
-</li>
-<li>Provide AI tools while maintaining clear pathways to human doctors.
-</li>
-<li>Embed robust privacy measures aligned with Canadian data protection laws.
-</li>
-<li>Maintain a professional, empathetic interface for creating trust.
-</li>
-</ul>
-
-<p>Furthermore, there are other healthcare chatbots which functionalities provide good guidance to HealthGuide QC:
-</p>
-<ul>
-<li><strong>Ada Health</strong>: Broad medical advice and symptom analysis powered by AI in 6+ health categories and 7+ languages. Includes recurrent health articles as additional content. 
-</li>
-<li><strong>Buoy Health</strong>: Broad medical advice and symptom analysis, it includes expert guided plans for 16+ symptoms.
-</li>
-<li><strong>Keenethics’ OneRemission</strong>: Chatbot with health tracking for cancer patients with connection to 24/7 human oncologists.
-</li>
-<li><strong>Sensely’s Molly</strong>: AI-powered nurse that gives medical advice and symptom analysis. Uses triage system to detect emergencies.
-</li>
-</ul>
-<p>References:</p>
-<ul>
-    <li>Laymouna, M., et al. (2024). Roles, Users, Benefits, and Limitations of Chatbots in Health Care: Rapid Review. PMC, https://pmc.ncbi.nlm.nih.gov/articles/PMC11303905/
-    </li>
-    <li>Statistique Québec.(2023). A portrait of job vacancy rates in the Québec health care and social assistance
-industry.
-</li>
-<li>TELUS Health. (2019). New app from TELUS Health and Babylon enables Canadians to visit a doctor through their
-smartphone. https://www.telus.com/en/health/press-releases/new-app-telus-health-
-babylon-enables-canadians-visit-doctor-smartphone
-</li>
-<li>Dilmegani, C. (2025). Top 10 chatbots in healthcare: Insights & use cases. AIMultiple. https://research.aimultiple.com/chatbot-healthcare/
-</li>
-</ul>
+            <p class="bigParagraph">In order to produce a valuable solution, it was fundamental to understand Quebec’s healthcare challenges, as well as the market and existing technologies for healthcare entrance assistance. </p>
+            <p class="bigParagraph">Quebec’s healthcare system faces critical challenges such as long waiting lists, high job vacancy rates, and a growing patient demand due to an aging population. These challenges highlight a need for more efficient services and solutions that could amend the current gap in supply and demand. Therefore, we believe that implementing AI technologies to support healthcare services in the province is well justified.</p>
+            <p class="bigParagraph">Our research in AI chatbots in healthcare showed that these tools improve: accessibility, efficiency and patient satisfaction, while reducing administrative workloads. However, there are serious challenges such as privacy, safety and lack of empathy in AI-human interactions. These insights should directly influence the system’s design, prioritizing trust, safety, and transparency as core principles. </p>
+            <p class="bigParagraph">In terms of competitors or similar applications in Canada, <strong>TELUS Health MyCare </strong>(formerly Babylon by TELUS Health) highlights. It offers AI-powered symptom checking and virtual consultations for TELUS clients, with a focus on secure data handling. Key insights from this application for our construction of HealthGuide QC include:</p>
+            <ul>
+                <li>Offer bilingual (English & French) support for Quebec users.</li>
+                <li>Provide AI tools while maintaining clear pathways to human doctors.</li>
+                <li>Embed robust privacy measures aligned with Canadian data protection laws.</li>
+                <li>Maintain a professional, empathetic interface for creating trust.</li>
+            </ul>
+            <p>Furthermore, there are other healthcare chatbots which functionalities provide good guidance to HealthGuide QC:</p>
+            <ul>
+                <li><strong>Ada Health</strong>: Broad medical advice and symptom analysis powered by AI in 6+ health categories and 7+ languages. Includes recurrent health articles as additional content. </li>
+                <li><strong>Buoy Health</strong>: Broad medical advice and symptom analysis, it includes expert guided plans for 16+ symptoms.</li>
+                <li><strong>Keenethics’ OneRemission</strong>: Chatbot with health tracking for cancer patients with connection to 24/7 human oncologists.</li>
+                <li><strong>Sensely’s Molly</strong>: AI-powered nurse that gives medical advice and symptom analysis. Uses triage system to detect emergencies.</li>
+            </ul>
+            <p>References:</p>
+            <ul>
+                <li>Laymouna, M., et al. (2024). Roles, Users, Benefits, and Limitations of Chatbots in Health Care: Rapid Review. PMC, https://pmc.ncbi.nlm.nih.gov/articles/PMC11303905/</li>
+                <li>Statistique Québec.(2023). A portrait of job vacancy rates in the Québec health care and social assistance industry.</li>
+                <li>TELUS Health. (2019). New app from TELUS Health and Babylon enables Canadians to visit a doctor through their smartphone. https://www.telus.com/en/health/press-releases/new-app-telus-health-babylon-enables-canadians-visit-doctor-smartphone</li>
+                <li>Dilmegani, C. (2025). Top 10 chatbots in healthcare: Insights & use cases. AIMultiple. https://research.aimultiple.com/chatbot-healthcare/</li>
+            </ul>
         </section>
 
-        <section id="goals" class="section">
+        <section id="user-personas" class="section">
+            <h2>User Personas</h2>
+            <p>To ground our design in real-world needs, we developed three personas representing key user groups in Quebec: a new immigrant facing language barriers, a digitally-native student managing stress, and an elderly citizen seeking accessible care.</p>
+            <div style="display:flex; flex-direction:column; align-items:center; gap:40px; margin-top:20px;">
+                <img src="Persona1.png" alt="Persona for Mohammed Ali" style="max-width: 100%; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.1);">
+                <img src="Persona2.png" alt="Persona for Marie Chen" style="max-width: 100%; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.1);">
+                <img src="Persona3.png" alt="Persona for Élise Dubois" style="max-width: 100%; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.1);">
+            </div>
+        </section>
+        
+        <section id="empathy-maps" class="section">
+            <h2>Empathy Maps</h2>
+            <p>To deepen our understanding of our users, we developed empathy maps for each persona, breaking down what they think, feel, say, and do.</p>
+            <div class="empathy-map-container">
+                <div class="empathy-map">
+                    <div class="empathy-map-header"><h3>Mohammed Ali</h3></div>
+                    <div class="empathy-map-grid">
+                        <div class="empathy-quadrant"><h4>SAYS</h4><ul><li>"My chest feels tight."</li><li>"How do I explain this in French?"</li><li>"This is clearer than Google."</li></ul></div>
+                        <div class="empathy-quadrant"><h4>THINKS</h4><ul><li>"Is this serious?"</li><li>"Can I trust an AI with this?"</li><li>"I feel much more assured now."</li></ul></div>
+                        <div class="empathy-quadrant"><h4>DOES</h4><ul><li>Hesitates to call 811.</li><li>Selects Arabic language option.</li><li>Reads AI recommendation.</li><li>Finds a walk-in clinic.</li></ul></div>
+                        <div class="empathy-quadrant"><h4>FEELS</h4><ul><li>Worried & Skeptical</li><li>Nervous</li><li>Relieved</li><li>Confident & Empowered</li></ul></div>
+                    </div>
+                </div>
+                <div class="empathy-map">
+                    <div class="empathy-map-header"><h3>Marie Chen</h3></div>
+                    <div class="empathy-map-grid">
+                        <div class="empathy-quadrant"><h4>SAYS</h4><ul><li>"Is this just stress again?"</li><li>"I can't wait hours at a clinic."</li><li>"Is my personal data secure?"</li></ul></div>
+                        <div class="empathy-quadrant"><h4>THINKS</h4><ul><li>"Online searches will just scare me."</li><li>"I need a fast, reliable answer."</li><li>"I hope this is more useful than WebMD."</li></ul></div>
+                        <div class="empathy-quadrant"><h4>DOES</h4><ul><li>Anxiously searches symptoms online.</li><li>Reads app privacy policies.</li><li>Enters symptoms during a study break.</li></ul></div>
+                        <div class="empathy-quadrant"><h4>FEELS</h4><ul><li>Stressed & Anxious</li><li>Skeptical about data privacy.</li><li>Seeks reassurance and efficiency.</li></ul></div>
+                    </div>
+                </div>
+                <div class="empathy-map">
+                    <div class="empathy-map-header"><h3>Élise Dubois</h3></div>
+                    <div class="empathy-map-grid">
+                        <div class="empathy-quadrant"><h4>SAYS</h4><ul><li>"Is this new pain related to my arthritis?"</li><li>"It's so hard to get a quick appointment."</li><li>"I hope the text is large enough to read."</li></ul></div>
+                        <div class="empathy-quadrant"><h4>THINKS</h4><ul><li>"I don't want to be a burden."</li><li>"Is this serious enough for the ER?"</li><li>"I trust my doctor, but he's so busy."</li></ul></div>
+                        <div class="empathy-quadrant"><h4>DOES</h4><ul><li>Uses her iPad to browse the web.</li><li>Worries about new symptoms alone.</li><li>Asks her family for help with tech.</li></ul></div>
+                        <div class="empathy-quadrant"><h4>FEELS</h4><ul><li>Worried & Uncertain</li><li>Frustrated with long wait times.</li><li>Seeks simple, trustworthy guidance.</li></ul></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="user-journeys" class="section">
+            <h2>User Journeys & Flows</h2>
+            <p>This section illustrates the emotional and behavioral flow of Mohammed Ali, our persona for a new immigrant. It highlights how his initial anxiety transforms into confidence as he interacts with HealthGuide QC. This is followed by a storyboard and user flow diagram that apply to all users.</p>
+            
+            <h3>User Journey Map: Mohammed Ali</h3>
+            <div style="text-align:center; margin-bottom: 40px;">
+                <img src="JourneyMap.png" alt="User Journey Map for Mohammed Ali" style="max-width: 100%; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+            </div>
+            
+            <h3>Storyboard: Mohammed's Experience</h3>
+            <p>This storyboard visually narrates Mohammed's journey, from initial worry to final confidence, highlighting key interactions with HealthGuide QC.</p>
+            <div class="storyboard-container">
+                <div class="storyboard-panel"><div class="storyboard-image">Panel 1: The Problem</div><div class="storyboard-caption"><strong>Worry & Hesitation</strong> Mohammed feels chest tightness. He's worried but hesitates to call for help due to the language barrier.</div></div>
+                <div class="storyboard-panel"><div class="storyboard-image">Panel 2: The Solution</div><div class="storyboard-caption"><strong>Discovering the App</strong> He opens HealthGuide QC on his phone and is relieved to find a language option for Arabic.</div></div>
+                <div class="storyboard-panel"><div class="storyboard-image">Panel 3: Interaction</div><div class="storyboard-caption"><strong>Entering Symptoms</strong> He types his symptoms into the clear interface, feeling nervous but hopeful for a clear answer.</div></div>
+                <div class="storyboard-panel"><div class="storyboard-image">Panel 4: The Result</div><div class="storyboard-caption"><strong>Clarity & Trust</strong> The AI provides a clear recommendation, a confidence score, and sources. This builds his trust.</div></div>
+                <div class="storyboard-panel"><div class="storyboard-image">Panel 5: Taking Action</div><div class="storyboard-caption"><strong>Finding Care</strong> Following the app's advice, he uses the clinic locator to find a recommended walk-in clinic nearby.</div></div>
+                <div class="storyboard-panel"><div class="storyboard-image">Panel 6: The Outcome</div><div class="storyboard-caption"><strong>Empowerment</strong> With a clear plan, Mohammed leaves home feeling confident and in control of his health situation.</div></div>
+            </div>
+
+            <h3 style="margin-top: 40px;">User Flow Diagram</h3>
+            <p>The user flow diagram visualizes the core navigation path within HealthGuide QC, showing how a user moves from symptom input to AI-generated recommendations and clear, actionable next steps.</p>
+            <div style="text-align:center;">
+                <img src="UserFlow.png" alt="User Flow Diagram" style="width:100%; max-width:1500px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+            </div>
+        </section>
+
+        <section id="design-process" class="section">
+            <h2>Design Process: From Sketch to Wireframe</h2>
+            <p>Our design process began with low-fidelity sketches to explore different layouts for the critical Results screen, followed by mid-fidelity wireframes to solidify the structure. This iterative process ensures the final design is both intuitive and user-centric.</p>
+            
+            <div class="design-process-container">
+                <div class="design-stage">
+                    <h3>Step 1: Low-Fidelity Sketches</h3>
+                    <div class="sketch"><p><strong>Iteration A: Horizontal Actions</strong></p><div class="box">Recommendation Text...</div><div class="box" style="width: 50%; margin-left: auto; margin-right: auto;">Confidence: 85%</div><div class="button-row"><div class="box">Btn 1</div><div class="box">Btn 2</div><div class="box">Btn 3</div></div></div>
+                    <div class="sketch"><p><strong>Iteration B: Vertical Actions</strong></p><div class="box">Recommendation Text...</div><div class="box" style="width: 50%; margin-left: auto; margin-right: auto;">Confidence: 85%</div><div class="box">Action 1</div><div class="box">Action 2</div><div class="box">Action 3</div></div>
+                    <p><strong>Decision:</strong> We chose a layout inspired by <strong>Iteration A</strong>, as placing primary actions at the bottom is more ergonomic for mobile users.</p>
+                </div>
+                <div class="design-stage">
+                    <h3>Step 2: Mid-Fidelity Wireframe</h3>
+                    <div class="wireframe"><div class="wf-box">Primary Recommendation</div><div class="wf-text"></div><div class="wf-text short"></div><br><div class="wf-box" style="width: 60%; margin: 0 auto 20px auto; padding: 10px;">Confidence Score</div><div class="wf-actions"><div class="wf-button">Sources</div><div class="wf-button">Speak to Nurse</div><div class="wf-button">Clinic Locations</div></div></div>
+                     <p>This wireframe solidifies the information hierarchy and layout, focusing on structure before applying visual design. The main recommendation is given top priority, followed by the trust-building confidence score, and finally, clear, actionable next steps.</p>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 40px;">Task Analysis</h3>
+            <p>We created a detailed task analysis for the primary user goal: getting a recommendation for a new symptom. This helps ensure every step of the process is logical and meets user expectations.</p>
+            <table class="task-analysis-table">
+                <thead>
+                    <tr><th>Step #</th><th>User Action</th><th>System Feedback / Interface</th><th>User's Thoughts / Feelings</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td>Opens the HealthGuide QC app.</td><td>App loads to the Home Page with a clear "Start Symptom Check" button.</td><td>"Okay, let's figure this out." (Goal-oriented)</td></tr>
+                    <tr><td>2</td><td>Taps "Start Symptom Check".</td><td>Transitions to a clean, simple chat interface or input form.</td><td>"This looks straightforward." (Hopeful)</td></tr>
+                    <tr><td>3</td><td>Types symptoms into the input field.</td><td>Text appears in the input field as the user types.</td><td>"I hope I'm describing this correctly." (Anxious)</td></tr>
+                    <tr><td>4</td><td>Taps the "Submit" or "Send" button.</td><td>An animation appears: "AI is processing your information..."</td><td>"Please don't tell me it's something terrible." (Nervous)</td></tr>
+                    <tr><td>5</td><td>Reads the AI recommendation and confidence score.</td><td>Recommendation is in plain language. A confidence percentage is visible.</td><td>"Okay, 85% confidence... that seems reliable." (Evaluating Trust)</td></tr>
+                    <tr><td>6</td><td>Examines the next-step actions.</td><td>Buttons for "Sources," "Speak to Nurse," and "Clinic Locations" are presented.</td><td>"It's good I have options. Finding a clinic seems right." (Relieved, Decisive)</td></tr>
+                </tbody>
+            </table>
+        </section>
+        
+        <section id="user-research" class="section">
+            <h2>Evidence of User Research</h2>
+            <p>While we did not conduct live interviews for this project, our design decisions were guided by the anticipated responses of our target users, as synthesized from our persona research. The following simulated quotes reflect the core needs we aimed to address and informed our user-centric approach.</p>
+            <div class="quote-container"><p>"Searching my symptoms online is a nightmare—it always leads to the worst-case scenario. I just want a reliable, quick way to know if something is serious without having to wait for hours at a clinic."</p><footer>- Based on the Marie Chen Persona</footer></div><br>
+            <div class="quote-container"><p>"Official websites are difficult, especially when French isn't your first language. An application that could understand me in Arabic and give me clear guidance would be an incredible relief."</p><footer>- Based on the Mohammed Ali Persona</footer></div><br>
+            <div class="quote-container"><p>"It takes weeks to see my family doctor. I worry about new pains, but I don't want to rush to the emergency room for nothing. I need simple, reassuring advice I can trust from my home."</p><footer>- Based on the Élise Dubois Persona</footer></div>
+        </section>
+
+        <section id="user-requirements" class="section">
             <h2>User Requirements</h2>
              <div class="section-content reverse">
                 <div class="text-content">
+                    <p>Based on our research and user personas, we defined a core set of requirements to ensure HealthGuide QC is trustworthy, accessible, and effective.</p>
                     <ul class="styled-list">
-                        <li><strong>Multilingual:</strong> Supports conversations in multiple languages.</li>
-                        <li><strong>Clarity:</strong> Delivers medical information non-technical patients.</li>
-                        <li><strong>Availability:</strong> 24/7 doubt solving. </li>
-                        <li><strong>Assessment:</strong> Guides users through symptom checks and early diagnosis insights.</li>
-                        <li><strong>Security:</strong> Strong privacy measures according to Canadian regulations.</li>
-                        <li><strong>Usability:</strong> Features an intuitive chatbot design.</li>
-                        <li><strong>Trust:</strong> Provides reliable medical guidance with evidence to build confidence.</li>
-                        <li><strong>Next Steps:</strong> Direct users to the appropiate health service.</li>
+                        <li><strong>Multilingual:</strong> Supports conversations in multiple languages to serve Quebec's diverse population.</li>
+                        <li><strong>Clarity:</strong> Delivers medical information in simple, non-technical language.</li>
+                        <li><strong>Availability:</strong> Provides 24/7 access to initial health guidance.</li>
+                        <li><strong>Assessment:</strong> Guides users through symptom checks to provide transparent, AI-driven insights.</li>
+                        <li><strong>Security:</strong> Implements strong privacy measures compliant with Canadian regulations.</li>
+                        <li><strong>Usability:</strong> Features an intuitive, accessible design for all technical skill levels.</li>
+                        <li><strong>Trust:</strong> Provides reliable guidance with confidence scores and verifiable sources to build user confidence.</li>
+                        <li><strong>Next Steps:</strong> Clearly directs users to the appropriate next level of care (e.g., nurse, clinic, doctor).</li>
                     </ul>
                 </div>
                  <div class="image-content">
@@ -309,43 +586,6 @@ babylon-enables-canadians-visit-doctor-smartphone
             </div>
         </section>
 
-        <!-- Jin's Section -->
-        <section id="user-personas" class="section">
-            <h2>User Personas</h2>
-            <p>These three personas represent three distinct groups of Quebec citizen who may use HealthGuide QC:
-                a young student seeking clarity, an elderly user valuing accessibility, and a new immigrant focusing on language inclusiveness.</p>
-            <div style="display:flex; flex-direction:column; align-items:center; gap:40px; margin-top:20px;">
-                <div style="text-align:center;">
-                    <img src="Persona1.png" alt="Persona 1" style="  border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.1);">
-                    <p style="font-size:1.1em; margin-top:10px;">Persona 1</p>
-                </div>
-                <div style="text-align:center;">
-                    <img src="Persona2.png" alt="Persona 2" style="  border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.1);">
-                    <p style="font-size:1.1em; margin-top:10px;">Persona 2</p>
-                </div>
-                <div style="text-align:center;">
-                    <img src="Persona3.png" alt="Persona 3" style="   border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.1);">
-                    <p style="font-size:1.1em; margin-top:10px;">Persona 3</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="user-JourneyMap" class="section">
-            <h2>User Journey Map</h2>
-            <p>This section illustrates the emotional and behavioral flow of Mohammed Ali, one of our personas.
-                It highlights how his initial anxiety turns into confidence as the App HealthGuide QC operates</p>
-             <div style="text-align:center;">
-                <img src="JourneyMap.png" alt="User Journey Map" style=" border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-            </div>
-        </section>
-
-        <section id="user-flow" class="section">
-            <h2>User Flow Diagram</h2>
-            <p>  The user flow diagram visualizes the core navigation path within HealthGuide QC,showing user how to use the app from symptom input to AI-generated recommendations as well as easy-accessible live nurse assistants. </p>
-            <div style="text-align:center;  ">
-                <img src="UserFlow.png" alt="User Flow Diagram" style="width:100%; max-width:1500px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-            </div>
-        </section>
     </div>
     
     <footer>
