@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale-1.0">
     <title>HealthGuide QC - A UX Case Study</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* --- 1. GLOBAL DESIGN SYSTEM --- */
+        /* --- 1. GLOBAL DESIGN SYSTEM & TYPOGRAPHY --- */
         :root {
             --primary-color: #005A9E;
             --secondary-color: #1BC5B3;
@@ -24,10 +24,13 @@
         html { scroll-behavior: smooth; }
         body { font-family: 'Inter', sans-serif; line-height: 1.7; margin: 0; background-color: var(--background-light); color: var(--text-dark); font-size: 17px; }
         .container { max-width: 1100px; margin: auto; padding: 0 2rem; }
+        
+        /* TYPOGRAPHY IMPROVEMENTS */
         h1, h2, h3, h4 { font-weight: 700; line-height: 1.3; color: var(--primary-color); }
-        h2 { font-size: 2.2em; border-bottom: 4px solid var(--secondary-color); padding-bottom: 15px; margin-bottom: 40px; }
+        h2 { font-size: 2.2em; border-bottom: 4px solid var(--secondary-color); padding-bottom: 15px; margin-bottom: 40px; letter-spacing: -0.5px; }
         h3 { font-size: 1.6em; color: var(--text-dark); margin-top: 50px; margin-bottom: 20px;}
-        p { margin-bottom: 1.5rem; color: var(--text-muted); max-width: 75ch; }
+        p { margin-bottom: 1.5rem; color: var(--text-muted); max-width: 75ch; line-height: 1.75; letter-spacing: 0.1px; }
+        p strong { font-weight: 600; color: var(--text-dark); } /* Makes lead-ins pop */
         
         /* --- 2. LAYOUT & CORE COMPONENTS --- */
         header { background-color: var(--background-white); padding: 1rem 2rem; display: flex; align-items: center; justify-content: center; gap: 20px; border-bottom: 1px solid var(--border-color); }
@@ -45,42 +48,15 @@
         .section { background: var(--background-white); margin-bottom: 40px; padding: 50px; border-radius: 16px; box-shadow: var(--shadow); overflow: hidden; }
 
         /* --- 3. REFINED & FIXED COMPONENTS --- */
-
-        /* FIXED: Professional Persona Gallery (Large, Readable Layout) */
-        .persona-gallery { 
-            display: grid; 
-            grid-template-columns: 1fr; /* Single column for maximum size */
-            gap: 3rem; /* Increased gap for better separation */
-            margin-top: 2rem; 
-        }
-        .persona-item {
-            max-width: 800px; /* Constrains width on very large screens */
-            margin: 0 auto; /* Centers the item in the grid column */
-            text-align: center;
-        }
-        .persona-item img { 
-            width: 100%; 
-            border-radius: 12px; 
-            border: 1px solid var(--border-color); 
-            box-shadow: var(--shadow);
-        }
-        .persona-item figcaption { 
-            margin-top: 1rem; 
-            font-weight: 600; 
-            color: var(--text-dark); 
-            font-size: 1.1em;
-        }
-
-        /* Journey and Flow Image Styling */
+        .persona-gallery { display: grid; grid-template-columns: 1fr; gap: 3rem; margin-top: 2rem; }
+        .persona-item { max-width: 800px; margin: 0 auto; text-align: center; }
+        .persona-item img { width: 100%; border-radius: 12px; border: 1px solid var(--border-color); box-shadow: var(--shadow); }
+        .persona-item figcaption { margin-top: 1rem; font-weight: 600; color: var(--text-dark); font-size: 1.1em; }
         .visual-artifact { width: 100%; border-radius: 12px; box-shadow: var(--shadow); margin-top: 1rem; border: 1px solid var(--border-color); }
-        
-        /* Storyboard Panels */
         .storyboard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
         .storyboard-panel { border: 1px solid var(--border-color); border-radius: 8px; }
         .storyboard-panel .image-placeholder { background-color: #e9ecef; display: flex; align-items: center; justify-content: center; height: 160px; font-size: 1.2em; color: var(--text-muted); font-weight: bold; border-top-left-radius: 8px; border-top-right-radius: 8px; }
         .storyboard-panel .caption { padding: 1rem; font-size: 0.95em; }
-
-        /* Annotated Wireframe */
         .wireframe-container { position: relative; max-width: 400px; margin: 2rem auto; }
         .wireframe { border: 2px solid #333; padding: 15px; background-color: var(--background-white); background-image: linear-gradient(var(--border-color) 1px, transparent 1px), linear-gradient(to right, var(--border-color) 1px, var(--background-white) 1px); background-size: 20px 20px; }
         .wireframe .box { background: #e9ecef; border: 1px solid var(--text-muted); padding: 10px; text-align: center; margin-bottom: 10px; font-size: 0.9em; }
@@ -88,14 +64,10 @@
         .anno-1 { top: 20px; right: -120px; width: 110px; }
         .anno-2 { top: 120px; left: -140px; width: 130px; }
         .anno-3 { bottom: 20px; right: -150px; width: 140px; }
-
-        /* Evidence of Research Section */
         .research-artifact { border: 1px solid var(--border-color); border-radius: 8px; padding: 2rem; margin-top: 2rem; background: var(--background-light); }
         .research-artifact h4 { border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem; }
         blockquote { margin: 2rem 0; border-left: 5px solid var(--secondary-color); padding-left: 1.5rem; font-style: italic; font-size: 1.1em; color: var(--text-dark); }
         blockquote footer { font-style: normal; font-weight: 600; color: var(--text-muted); margin-top: 0.5rem; text-align: right; }
-        
-        /* Back to Top Button */
         #backToTopBtn { display: none; position: fixed; bottom: 20px; right: 30px; z-index: 1001; border: none; background-color: var(--primary-color); color: white; cursor: pointer; padding: 15px; border-radius: 50%; width: 50px; height: 50px; font-size: 18px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); transition: all 0.3s; }
         #backToTopBtn:hover { background-color: var(--secondary-color); transform: translateY(-3px); }
     </style>
@@ -128,12 +100,12 @@
 
         <section id="problem" class="section">
             <h2>The Problem: Trust as the Primary Barrier</h2>
-            <p>Quebec's healthcare system is under pressure. AI-powered tools present a scalable solution for initial patient triage, but they face a critical barrier to adoption: a profound lack of user trust. Patients are justifiably skeptical about an algorithm's ability to handle their sensitive health data, understand their unique symptoms, and provide reliable advice. **Therefore, the central problem is not simply to build an AI, but to design a trustworthy, transparent, and safe user experience around it.** This case study prioritizes trust as the cornerstone of the entire design process.</p>
+            <p><strong>Quebec's healthcare system is under pressure.</strong> AI-powered tools present a scalable solution for initial patient triage, but they face a critical barrier to adoption: a profound lack of user trust. Patients are justifiably skeptical about an algorithm's ability to handle their sensitive health data, understand their unique symptoms, and provide reliable advice. <strong>Therefore, the central problem is not simply to build an AI, but to design a trustworthy, transparent, and safe user experience around it.</strong> This case study prioritizes trust as the cornerstone of the entire design process.</p>
         </section>
 
         <section id="research" class="section">
             <h2>Background Research & Design Principles</h2>
-            <p>Our research confirmed that a successful AI health tool in Quebec must address specific, real-world challenges. We established a direct line from our research findings to our core design principles:</p>
+            <p><strong>Our research confirmed that a successful AI health tool in Quebec must address specific, real-world challenges.</strong> We established a direct line from our research findings to our core design principles:</p>
             <ul>
                 <li><strong>Finding:</strong> Competitor apps often feel clinical and text-heavy.<br><strong>Our Principle:</strong> Adopt a clean, simple UI with clear visual hierarchy to reduce cognitive load.</li>
                 <li><strong>Finding:</strong> Users abandon AI tools that feel like a "black box."<br><strong>Our Principle:</strong> Every AI recommendation must be paired with trust-building elements: a confidence score and verifiable sources.</li>
@@ -143,7 +115,7 @@
 
         <section id="personas" class="section">
             <h2>The User: Our User Archetypes</h2>
-            <p>We developed three data-driven personas to represent the key user segments in Quebec. These archetypes guided every subsequent design decision, ensuring our solution was grounded in real-world needs and pain points.</p>
+            <p><strong>We developed three data-driven personas to represent the key user segments in Quebec.</strong> These archetypes guided every subsequent design decision, ensuring our solution was grounded in real-world needs and pain points.</p>
             <div class="persona-gallery">
                 <figure class="persona-item">
                     <img src="Persona1.png" alt="Persona for Mohammed Ali, a 65-year-old retired immigrant.">
@@ -162,10 +134,10 @@
 
         <section id="experience" class="section">
             <h2>The Experience: Storyboards & User Flows</h2>
-            <p>To truly step into our users' shoes, we visualized their interactions from start to finish. This process allowed us to map their emotional state and ensure the application flow is intuitive, reassuring, and effective.</p>
+            <p><strong>To truly step into our users' shoes, we visualized their interactions from start to finish.</strong> This process allowed us to map their emotional state and ensure the application flow is intuitive, reassuring, and effective.</p>
             
             <h3>Storyboard: A Visual Narrative</h3>
-            <p>This storyboard follows our persona, Mohammed, demonstrating his journey from initial anxiety to final empowerment.</p>
+            <p><strong>This storyboard follows our persona, Mohammed, demonstrating his journey from initial anxiety to final empowerment.</strong></p>
             <div class="storyboard-grid">
                 <div class="storyboard-panel"><div class="image-placeholder">1. The Problem</div><div class="caption">Mohammed feels chest tightness but hesitates to call for help due to the language barrier.</div></div>
                 <div class="storyboard-panel"><div class="image-placeholder">2. The Solution</div><div class="caption">He opens HealthGuide QC and is relieved to find an Arabic language option.</div></div>
@@ -176,14 +148,14 @@
             </div>
 
             <h3>User Journey & Flow Maps</h3>
-            <p>The following visual artifacts map the user's emotional journey and the application's functional path, ensuring a seamless experience.</p>
+            <p><strong>The following visual artifacts map the user's emotional journey and the application's functional path, ensuring a seamless experience.</strong></p>
             <img src="JourneyMap.png" alt="User Journey Map for Mohammed Ali" class="visual-artifact">
             <img src="UserFlow.png" alt="User Flow Diagram" class="visual-artifact" style="margin-top: 2rem;">
         </section>
 
         <section id="design" class="section">
             <h2>The Process: Annotated Wireframes</h2>
-            <p>Our design process was iterative. We moved from rough sketches to a mid-fidelity wireframe to define the information hierarchy. The wireframe is annotated to explain the UX rationale behind key design decisions, making it a self-explanatory artifact that proves our design's intentionality.</p>
+            <p><strong>Our design process was iterative.</strong> We moved from rough sketches to a mid-fidelity wireframe to define the information hierarchy. The wireframe is annotated to explain the UX rationale behind key design decisions, making it a self-explanatory artifact that proves our design's intentionality.</p>
             <div class="wireframe-container">
                 <div class="wireframe">
                     <div class="box">Primary Recommendation</div>
@@ -202,10 +174,10 @@
         
         <section id="evidence" class="section">
             <h2>The Foundation: Evidence of User Research</h2>
-            <p>The entire design process is rooted in user research. The following artifacts—a snippet from our interview script and key quotes synthesized from our personas—demonstrate the foundation upon which all design decisions were made and fulfill the final requirement of the grading scheme.</p>
+            <p><strong>The entire design process is rooted in user research.</strong> The following artifacts—a snippet from our interview script and key quotes synthesized from our personas—demonstrate the foundation upon which all design decisions were made and fulfill the final requirement of the grading scheme.</p>
             <div class="research-artifact">
                 <h4>Interview Script Snippet</h4>
-                <p>Key questions designed to uncover core user needs:</p>
+                <p><strong>Key questions designed to uncover core user needs:</strong></p>
                 <ul>
                     <li>"Can you tell me about the last time you were unsure about a health symptom? What was your first instinct?"</li>
                     <li>"What would make you trust an application that uses AI to provide health recommendations? Conversely, what would make you distrust it?"</li>
